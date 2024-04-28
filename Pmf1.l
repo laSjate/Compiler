@@ -13,15 +13,13 @@ linefeed    \n
 %x MULTILINE_COMMENT
 
 %%
-"IF"|"ELSE"|"FOR"|"WHILE"|"BREAK"|"RETURN"|
-"CONTINUE"|"VOID"|"INT"|"DOUBLE"|"FLOAT"|"CHAR"|
-"UNION"|"STRUCT"                                    { printf("Keyword: %s\n", yytext); err_col++; }
+"true"|"false"                                      { printf("Bool: %s\n", yytext); err_col++; }
+"IF"|"ELSE"|"FOR"|"WHILE"|"BREAK"|"RETURN"|"CONTINUE"|"VOID"|"INT"|"DOUBLE"|"FLOAT"|"CHAR"|"UNION"|"STRUCT"    { printf("Keyword: %s\n", yytext); err_col++; }
 [a-zA-Z_][a-zA-Z0-9_]{0,30}                         { printf("Identifikator: %s\n", yytext); err_col++; }
 (0x|0X)[0-9A-Fa-f]*                                 { printf("Hexa broj: %s\n", yytext); err_col++; }
 [0-9]+                                              { printf("Cijeli broj: %s\n", yytext); err_col++; }
 ([0-9]*\.[0-9]+|[0-9]+\.)([Ee][+-]?[0-9]+)?         { printf("Float: %s\n", yytext); err_col++; }
 \"[^\n"]+\"                                         { printf("String: %s\n", yytext); err_col++; }
-"true"|"false"                                      { printf("Bool: %s\n", yytext); err_col++; }
 
 [ \r\t]                                             { err_col++; }
 
