@@ -36,7 +36,7 @@
 %left T_EQTO T_NOTEQ
 %left T_LESS T_LEQ T_GRQ T_GRE
 %left T_PLUS T_MINUS
-%left T_MULT T_DIV T_POW
+%left T_MULT T_DIV T_POW T_MOD
 %right T_NOT
 
 %%
@@ -92,6 +92,7 @@ expression:
     | expression T_AND expression 
     | expression T_OR expression 
     | expression T_POW expression 
+    | expression T_MOD expression
     | T_NOT expression  
 ;
 
