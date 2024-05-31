@@ -1,7 +1,8 @@
 %{
     #include <stdio.h>
     #include <stdlib.h>
-    #include "example.tab.h"
+    #include "parser.tab.h"
+    #include "skener.h"
 
     void yyerror(const char*);
     void InvalidToken();

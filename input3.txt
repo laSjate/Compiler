@@ -1,0 +1,31 @@
+//primjer programa sa petljama, drugi domaći
+
+LET
+    DOUBLE a, b.
+    BOOL c.
+    STRING tekst.
+IN
+    a := 7.1;
+    b := 3.5e+2;
+	c:=TRUE; //komentar
+	
+    IF a*4 == b
+    THEN
+        a := b - 9;
+        b := b ^ 3;
+    ELSE
+	    SKIP;
+    FI;
+	
+    /*komentar u vise
+        redova*/
+	
+    WHILE a < b
+    DO
+        c := !c;
+        BREAK;
+    END;
+    
+
+    WRITE tekst;
+END

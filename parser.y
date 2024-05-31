@@ -2,7 +2,8 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
-     #include <math.h>
+    #include <math.h>
+    #include "parser.h"
 
     void yyerror(const char* s);
     int yylex();
@@ -71,7 +72,7 @@ command:
     | T_WHILE expression T_DO command_sequence T_END T_SC 
     | T_WHILE expression T_DO command_sequence T_BREAK T_SC T_END T_SC
     | T_READ T_ID T_SC 
-    | T_WRITE expression T_SC { printf("1\n"); }
+    | T_WRITE expression T_SC { printf("Kraj koda\n"); }
 ;
 
 expression:
@@ -121,8 +122,4 @@ type:
 
 void yyerror(const char* s){
     printf("ERROR ON LINE %d: %s\n", yylineno, s);
-}
-
-int main(){
-    return yyparse();
 }
