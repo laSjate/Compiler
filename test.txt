@@ -1,0 +1,8 @@
+LET
+    INT x;
+    INT y;
+IN
+    x := 10;
+    y := 20;
+    WRITE x + y;
+END

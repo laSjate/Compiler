@@ -2,6 +2,7 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include "parser.tab.h"
+    #include "parser.h"
     #include "skener.h"
 
     void yyerror(const char*);

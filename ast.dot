@@ -1,0 +1,21 @@
+digraph AST {
+    node [shape=box];
+    "program_";
+    "program_" -> "declarations_";
+    "declarations_" -> "declarations_";
+    "declarations_" -> "ident_decl_x";
+    "declarations_" -> "ident_decl_y";
+    "program_" -> "command_sequence_";
+    "command_sequence_" -> "command_sequence_";
+    "command_sequence_" -> "command_sequence_";
+    "command_sequence_" -> "command_:=";
+    "command_:=" -> "id_x";
+    "command_:=" -> "constant_10";
+    "command_sequence_" -> "command_:=";
+    "command_:=" -> "id_y";
+    "command_:=" -> "constant_20";
+    "command_sequence_" -> "command_write";
+    "command_write" -> "expression_+";
+    "expression_+" -> "identifier_x";
+    "expression_+" -> "identifier_y";
+}

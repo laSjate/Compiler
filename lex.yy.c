@@ -582,6 +582,7 @@ char *yytext;
     #include <stdio.h>
     #include <stdlib.h>
     #include "parser.tab.h"
+    #include "parser.h"
     #include "skener.h"
 
     void yyerror(const char*);
@@ -591,9 +592,9 @@ char *yytext;
     int count = 0;
     extern int yylex();
     extern int yyparse();
-#line 594 "lex.yy.c"
+#line 595 "lex.yy.c"
  
-#line 596 "lex.yy.c"
+#line 597 "lex.yy.c"
 
 #define INITIAL 0
 #define LINE_COMMENT 1
@@ -812,10 +813,10 @@ YY_DECL
 		}
 
 	{
-#line 21 "skener.l"
+#line 22 "skener.l"
 
 
-#line 818 "lex.yy.c"
+#line 819 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -874,337 +875,337 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "skener.l"
+#line 24 "skener.l"
 { yylval.int_value = strcmp(yytext, "true") == 0 ? 1 : 0; return T_BOOL; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "skener.l"
+#line 25 "skener.l"
 { return T_IF; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "skener.l"
+#line 26 "skener.l"
 { return T_ELSE; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "skener.l"
+#line 27 "skener.l"
 { return T_FOR; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 27 "skener.l"
+#line 28 "skener.l"
 { return T_WHILE; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "skener.l"
+#line 29 "skener.l"
 { return T_BREAK; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 29 "skener.l"
+#line 30 "skener.l"
 { return T_RETURN; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 30 "skener.l"
+#line 31 "skener.l"
 { return T_CONTINUE; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 31 "skener.l"
+#line 32 "skener.l"
 { return T_READ; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 32 "skener.l"
+#line 33 "skener.l"
 { return T_WRITE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 33 "skener.l"
+#line 34 "skener.l"
 { return T_SKIP; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 34 "skener.l"
+#line 35 "skener.l"
 { return T_FI; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 35 "skener.l"
+#line 36 "skener.l"
 { return T_DO; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 36 "skener.l"
+#line 37 "skener.l"
 { return T_END; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 37 "skener.l"
+#line 38 "skener.l"
 { return T_IN; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 38 "skener.l"
+#line 39 "skener.l"
 { return T_LET; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 39 "skener.l"
+#line 40 "skener.l"
 { return T_THEN; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 40 "skener.l"
+#line 41 "skener.l"
 { return T_VOID; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 41 "skener.l"
+#line 42 "skener.l"
 { return T_INT; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 42 "skener.l"
+#line 43 "skener.l"
 { return T_DOUBLE; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 43 "skener.l"
+#line 44 "skener.l"
 { return T_FLOAT; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 44 "skener.l"
+#line 45 "skener.l"
 { return T_CHAR; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 45 "skener.l"
+#line 46 "skener.l"
 { return T_BOOL; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 46 "skener.l"
+#line 47 "skener.l"
 { return T_STRING; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 47 "skener.l"
+#line 48 "skener.l"
 { return T_UNION; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 48 "skener.l"
+#line 49 "skener.l"
 { return T_STRUCT; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 49 "skener.l"
+#line 50 "skener.l"
 { yylval.ident = strdup(yytext); return T_ID; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 50 "skener.l"
+#line 51 "skener.l"
 { yylval.int_value = strtol(yytext, NULL, 16); return T_HEX; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 51 "skener.l"
+#line 52 "skener.l"
 { yylval.int_value = atoi(yytext); return T_INT_CONST; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 52 "skener.l"
+#line 53 "skener.l"
 { yylval.double_value = atof(yytext); return T_DOUBLE_CONST; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 53 "skener.l"
+#line 54 "skener.l"
 { yylval.string = strdup(yytext); return T_STRING; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 55 "skener.l"
+#line 56 "skener.l"
 { /* Ignore whitespaces */ }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 57 "skener.l"
+#line 58 "skener.l"
 { BEGIN(LINE_COMMENT); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 58 "skener.l"
+#line 59 "skener.l"
 { count++; BEGIN(MULTILINE_COMMENT); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 60 "skener.l"
+#line 61 "skener.l"
 { return T_PLUS; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 61 "skener.l"
+#line 62 "skener.l"
 { return T_MINUS; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 62 "skener.l"
+#line 63 "skener.l"
 { return T_MULT; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 63 "skener.l"
+#line 64 "skener.l"
 { return T_DIV; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 64 "skener.l"
+#line 65 "skener.l"
 { return T_MOD; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 65 "skener.l"
+#line 66 "skener.l"
 { return T_DBS; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 66 "skener.l"
+#line 67 "skener.l"
 { return T_POW; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 67 "skener.l"
+#line 68 "skener.l"
 { return T_LESS; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 68 "skener.l"
+#line 69 "skener.l"
 { return T_LEQ; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 69 "skener.l"
+#line 70 "skener.l"
 { return T_GRQ; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 70 "skener.l"
+#line 71 "skener.l"
 { return T_GRE; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 71 "skener.l"
+#line 72 "skener.l"
 { return T_EQ; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 72 "skener.l"
+#line 73 "skener.l"
 { return T_EQ; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 73 "skener.l"
+#line 74 "skener.l"
 { return T_EQTO; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 74 "skener.l"
+#line 75 "skener.l"
 { return T_NOTEQ; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 75 "skener.l"
+#line 76 "skener.l"
 { return T_AND; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 76 "skener.l"
+#line 77 "skener.l"
 { return T_OR; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 77 "skener.l"
+#line 78 "skener.l"
 { return T_NOT; }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 78 "skener.l"
+#line 79 "skener.l"
 { return T_SC; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 79 "skener.l"
+#line 80 "skener.l"
 { return T_DOT; }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 80 "skener.l"
+#line 81 "skener.l"
 { return T_COMMA; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 81 "skener.l"
+#line 82 "skener.l"
 { return T_LEFTP; }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 82 "skener.l"
+#line 83 "skener.l"
 { return T_RIGHTP; }
 	YY_BREAK
 case 58:
 /* rule 58 can match eol */
 YY_RULE_SETUP
-#line 84 "skener.l"
+#line 85 "skener.l"
 { yylineno++; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 86 "skener.l"
+#line 87 "skener.l"
 { InvalidToken(); }
 	YY_BREAK
 
 case 60:
 /* rule 60 can match eol */
 YY_RULE_SETUP
-#line 89 "skener.l"
+#line 90 "skener.l"
 { BEGIN(INITIAL); yylineno++; }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 90 "skener.l"
+#line 91 "skener.l"
 { }
 	YY_BREAK
 
 
 case 62:
 YY_RULE_SETUP
-#line 94 "skener.l"
+#line 95 "skener.l"
 { count++; }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 95 "skener.l"
+#line 96 "skener.l"
 { if (--count == 0) BEGIN(INITIAL); }
 	YY_BREAK
 case 64:
 /* rule 64 can match eol */
 YY_RULE_SETUP
-#line 96 "skener.l"
+#line 97 "skener.l"
 { }
 	YY_BREAK
 
 case 65:
 YY_RULE_SETUP
-#line 99 "skener.l"
+#line 100 "skener.l"
 ECHO;
 	YY_BREAK
-#line 1207 "lex.yy.c"
+#line 1208 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(LINE_COMMENT):
 case YY_STATE_EOF(MULTILINE_COMMENT):
@@ -2211,7 +2212,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 99 "skener.l"
+#line 100 "skener.l"
 
 
 void InvalidToken(){
