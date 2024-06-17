@@ -51,19 +51,38 @@ void write_dot(struct ASTNode* node, FILE* file) {
 void save_ast_to_dot(struct ASTNode* root, const char* filename) {
     FILE* file = fopen(filename, "w");
     if (!file) {
-        perror("Error opening file");
+        fprintf(stderr, "Could not open file %s for writing\n", filename);
         return;
     }
 
     fprintf(file, "digraph AST {\n");
     fprintf(file, "    node [shape=box];\n");
 
-    if (root) {
-        fprintf(file, "    \"%s_%s\";\n", root->type, root->value);
-        write_dot(root, file);
-    }
+    int counter = 0;
+    save_ast_node_to_dot(root, file, &counter);
 
     fprintf(file, "}\n");
-
     fclose(file);
 }
+
+void save_ast_node_to_dot(struct ASTNode* node, FILE* file, int* counter) {
+    if (!node) return;
+
+    int current_id = (*counter)++;
+    fprintf(file, "    node%d [label=\"%s: %s\"];\n", current_id, node->type, node->value);
+
+    if (node->left) {
+        int left_id = *counter;
+        save_ast_node_to_dot(node->left, file, counter);
+        // Uklanjamo oznaku "left"
+        fprintf(file, "    node%d -> node%d;\n", current_id, left_id);
+    }
+
+    if (node->right) {
+        int right_id = *counter;
+        save_ast_node_to_dot(node->right, file, counter);
+        // Uklanjamo oznaku "right"
+        fprintf(file, "    node%d -> node%d;\n", current_id, right_id);
+    }
+}
+

@@ -52,6 +52,7 @@ program:
     {
         root = createASTNode("program", "", $2, $4);
         printAST(root, 0);
+        save_ast_to_dot(root, "ast.dot");
     }
 ;
 

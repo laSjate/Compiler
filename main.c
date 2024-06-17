@@ -9,7 +9,7 @@ extern FILE *yyin;
 extern struct ASTNode* root;
 
 int main(int argc, char **argv) {
-    FILE *file = fopen("test.txt", "r");
+    FILE *file = fopen("input3.txt", "r");
     if (!file) {
         perror("Error opening file");
         return 1;
